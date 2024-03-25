@@ -28,7 +28,7 @@ function App() {
           <h1>PB&J Time</h1>{" "}
           {/* TODO: personalize your sandwitch (if you want) */}
           <div class="sandwitch-items">
-            {itemData.map(
+            {sandwitchData.map(
               (
                 item,
                 index // TODO: map sandwitchData to sandwitchItem components

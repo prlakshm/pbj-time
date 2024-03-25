@@ -35,7 +35,7 @@ export default function SandwitchItem(props) {
 
             <div class="bottom-nav">
             <p>${price}</p>
-            <button class="cart-button" onClick={addToCart}>Add to Cart</button>
+            <button class="cart-button" onClick={addToCart}>Add</button>
             </div>
         </div>
     );

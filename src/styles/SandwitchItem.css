@@ -1,6 +1,5 @@
 img {
-    width: 20rem;
-    height: 15rem;
+    width: 15rem;
     border-radius: 20px;
 }
 
@@ -15,7 +14,7 @@ img {
     border: 0.5rem solid #ffbeae;
     box-sizing: border-box;
     border-radius: 2rem;
-    width: 25rem;
+    width: 18rem;
     justify-content: center;
     align-items: center;
   }
@@ -29,14 +28,15 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: inherit;
     padding: 1rem 2.5rem 0 2.5rem;
+    width: inherit;
     box-sizing: border-box;
   }
 
   button {
     border-radius: 0.5rem;
     height: 3rem;
+    padding: 0rem 1rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: rgb(83, 145, 83);
     border: 2px solid rgb(57, 130, 57);

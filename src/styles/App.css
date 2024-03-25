@@ -11,7 +11,7 @@ body {
 }
 
 .left {
-    padding: 0.45rem 4rem 0.45rem 7rem;
+    padding: 0.45rem 4rem;
     justify-content: center;
     align-items: center;
     width: fit-content;
@@ -23,11 +23,12 @@ h1 {
     line-height: 2.5rem;
     font-weight: bold;
     color: #fc8364;
+    padding-left: 0.75rem;
 }
 
-.bakery-items {
+.sandwitch-items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .right {
