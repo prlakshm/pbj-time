@@ -19,7 +19,7 @@ body {
 
 h1 {
     font-family: "DynaPuff";
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 2.5rem;
     font-weight: bold;
     color: #fc8364;
@@ -39,14 +39,15 @@ h1 {
 
 /* Styles for the scrollbar track */
 .sandwitch-items::-webkit-scrollbar {
-    background-color: #f1f1f1; /* Change the background color */
+    background-color: rgb(255, 250, 243); /* Change the background color */
     border-radius: 1rem;
     scrollbar-width: auto;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   }
   
   /* Styles for the scrollbar handle */
   .sandwitch-items::-webkit-scrollbar-thumb {
-    background-color: #c9c9c9; /* Change the color of the scrollbar handle */
+    background-color: #ffd5ca; /* Change the color of the scrollbar handle */
     border-radius: 1rem; 
   }
 
