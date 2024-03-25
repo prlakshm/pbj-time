@@ -34,7 +34,7 @@ export default function SandwitchItem(props) {
             <h3>{name}</h3>
 
             <div class="bottom-nav">
-            <p>${price}</p>
+            <p>${parseFloat(price).toFixed(2)}</p>
             <button class="cart-button" onClick={addToCart}>Add</button>
             </div>
         </div>
