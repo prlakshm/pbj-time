@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Walnut Butter",
+    "price": 2.00,
+    "image": "ps_photos/walnut_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Cashew Butter",
+    "price": 1.50,
+    "image": "ps_photos/cashew_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Almond Butter",
+    "price": 1.00,
+    "image": "ps_photos/almond_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Peanut Butter",
+    "price": 1.00,
+    "image": "ps_photos/peanut_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Pistachio Butter",
+    "price": 2.00,
+    "image": "ps_photos/pistachio_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Hazelnut Butter",
+    "price": 1.50,
+    "image": "ps_photos/hazelnut_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Sunflower Butter",
+    "price": 1.50,
+    "image": "ps_photos/sunflower_butter.png",
+    "category": "nut butters"
+  },
+  {
+    "name": "Strawberry Jam",
+    "price": 0.75,
+    "image": "ps_photos/strawberry_jam.png",
+    "category": "jams"
+  },
+  {
+    "name": "Raspberry Jam",
+    "price": 1.00,
+    "image": "ps_photos/raspberry_jam.png",
+    "category": "jams"
+  },
+  {
+    "name": "Blueberry Jam",
+    "price": 1.00,
+    "image": "ps_photos/blueberry_jam.png",
+    "category": "jams"
+  },
+  {
+    "name": "Blackberry Jam",
+    "price": 1.00,
+    "image": "ps_photos/blackberry_jam.png",
+    "category": "jams"
+  },
+  {
+    "name": "Grape Jam",
+    "price": 0.75,
+    "image": "ps_photos/grape_jam.png",
+    "category": "jams"
+  },
+  {
+    "name": "Honey",
+    "price": 1.00,
+    "image": "ps_photos/honey.png",
+    "category": "toppings"
+  },
+  {
+    "name": "Maple Syrup",
+    "price": 1.00,
+    "image": "ps_photos/maple_syrup.png",
+    "category": "toppings"
+  },
+  {
+    "name": "Chia Seeds",
+    "price": 1.25,
+    "image": "ps_photos/chia_seeds.png",
+    "category": "toppings"
+  },
+  {
+    "name": "Flax Seeds",
+    "price": 1.25,
+    "image": "ps_photos/flax_seeds.png",
+    "category": "toppings"
+  }
+]
