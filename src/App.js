@@ -88,7 +88,7 @@ const removeFromCart = (index) => {
   return (
     <div className="App">
       <body>
-        <div class="left">
+        <div className="left">
           <h1>PB&J Time</h1> {/* Sort dropdowns */}
           <div className="sort-dropdowns">
             <select
@@ -122,13 +122,14 @@ const removeFromCart = (index) => {
             </select>
           </div>
           {/* TODO: personalize your sandwitch (if you want) */}
-          <div class="sandwitch-items">
+          <div className="sandwitch-items">
             {currentData.map(
               (
                 item,
                 index // TODO: map sandwitchData to sandwitchItem components
               ) => (
                 <SandwitchItem
+                  key={index}
                   name={item.name}
                   price={item.price}
                   image={item.image}
@@ -140,7 +141,7 @@ const removeFromCart = (index) => {
             )}
           </div>
         </div>
-        <div class="right">
+        <div className="right">
           <div className="instructions">
             <h2>Instructions</h2>
             <ul>
@@ -155,7 +156,8 @@ const removeFromCart = (index) => {
               </li>
             </ul>
           </div>
-          <div class="cart">
+          <div className="cart-container">
+          <div className="cart">
             {cart.length === 0 ? (
               // If cart is empty, display a message
               <div className="message">
@@ -169,7 +171,7 @@ const removeFromCart = (index) => {
                     <p>
                       {item.name}  {item.category === "Toppings" && `× ${item.quantity}`}
                     </p>
-                    <div class="price"><p>${parseFloat(item.price).toFixed(2)} {" "} </p><span class="clicker" onClick={() => removeFromCart(index)}>
+                    <div className="price"><p>${parseFloat(item.price).toFixed(2)} {" "} </p><span className="clicker" onClick={() => removeFromCart(index)}>
                     &times;
                       </span>
                       </div>
@@ -181,6 +183,10 @@ const removeFromCart = (index) => {
                 </div>
               </>
             )}
+          </div>
+          </div>
+          <div className="build">
+          <img src={"ps_photos/bread.png"} alt="Sandwitch Base" />
           </div>
         </div>
       </body>
