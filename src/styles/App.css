@@ -47,7 +47,7 @@ h1 {
     padding: 1rem;
     border-radius: 3rem;
     border: 0.5rem solid #ffbeae;
-    height: 65.5vh; /* Set the desired height */
+    height: 67.65vh; /* Set the desired height */
     overflow-y: scroll; /* Enable vertical scrolling */
 }
 
@@ -76,7 +76,7 @@ h1 {
 }
 
 .sort-dropdowns select {
-    margin: 1rem;
+    margin: 0 1rem 0.9rem 1rem;
     height: 2.5rem;
     border-radius: 1rem;
     padding: 0rem 1rem;
@@ -127,21 +127,27 @@ h1 {
     font-size: 1.05rem;
 }
 
-.price, .trash {
+.price {
     display: flex;
     flex-direction: row;
 }
 
+.trash {
+    display: flex;
+    flex-direction: row;
+    margin-right: -0.25rem; 
+}
+
 .clicker {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 100;
     height: fit-content;
     line-height: 1.6rem;
 }
 
 .trash img {
-    width: 1.1rem;
+    width: 1.05rem;
     height: fit-content;
     border-radius: 0;
 }
@@ -149,10 +155,10 @@ h1 {
 .trash button {
     margin-left: 0.5rem;
     margin-top: -0.25rem;
-    height: 1.5rem;
+    height: 1.55rem;
     width: 1.5rem;
     cursor: pointer;
-    padding: 0.05rem 0;
+    padding: 0.1rem 0 0.07rem 0;
 }
 
 
