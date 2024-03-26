@@ -189,11 +189,11 @@ function App() {
                       Total (
                       {cart.reduce((total, item) => total + item.quantity, 0)}):
                     </p>
-                    <p>${parseFloat(totalPrice).toFixed(2)}
-                    <span
-                          className="clicker"
+                    <p className="trash">${parseFloat(totalPrice).toFixed(2)}
+                    {" "}
+                    <button
                           onClick={() => setCart([])}
-                        >{" "}<img src="icons/trash.png" alt="Trash Can Icon"/></span></p>
+                        ><img src="icons/trash.png" alt="Trash Can Icon"/></button></p>
                   </div>
                 </>
               )}
