@@ -196,6 +196,7 @@ function App() {
             </div>
           </div>
           <div className="build">
+            <div className="img-container">
             <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
             {cart.map((item, index) => (
               <img
@@ -205,6 +206,7 @@ function App() {
                 className="added-photo"
               />
             ))}
+          </div>
           </div>
         </div>
       </body>

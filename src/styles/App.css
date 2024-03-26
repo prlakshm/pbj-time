@@ -47,7 +47,7 @@ h1 {
     padding: 1rem;
     border-radius: 3rem;
     border: 0.5rem solid #ffbeae;
-    height: 65vh; /* Set the desired height */
+    height: 65.5vh; /* Set the desired height */
     overflow-y: scroll; /* Enable vertical scrolling */
 }
 
@@ -189,19 +189,27 @@ h1 {
 
 .build {
     position: relative;
-    padding: 1rem 1rem 0rem 1rem;
-    border-radius: 2rem;
+    padding: 0.5rem 1rem 0rem 1rem;
     display: flex;
     justify-content: center;
     width: 22vw;
 }
 
+.build .img-container {
+    border: 6px solid #ade1d5;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+    border-radius: 2rem;
+}
+
 .build img {
     width: 19.5vw;
+    z-index: 0; /* Ensure it's behind the added photos */
+    border-radius: 2rem;
 }
 
 .added-photo {
     position: absolute;
+    left: 9%; /* Adjust as needed */
     z-index: 1; /* Ensure it's on top of the base image */
     transition: opacity 0.5s, transform 0.5s;
     animation: fallInAnimation 0.5s ease-out;
