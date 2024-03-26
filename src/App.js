@@ -15,26 +15,30 @@ function App() {
   // Use useState to create a state variable to hold the state of the cart
   const [cart, setCart] = useState([]);
 
-  const [currentData, setCurrentData] = useState(sandwitchData); 
+  const [currentData, setCurrentData] = useState(sandwitchData);
   const [selectedSort, setSelectedSort] = useState("Reset Sort");
   const [selectedFilter, setSelectedFilter] = useState("Reset Filter");
 
-  const categories = Array.from(new Set(sandwitchData.map(item => item.category))); // Extract unique categories
+  const categories = Array.from(
+    new Set(sandwitchData.map((item) => item.category))
+  ); // Extract unique categories
 
   const sortItemsByCategory = (category) => {
-    setSelectedSort(category)
+    setSelectedSort(category);
 
     if (category === "Reset Sort") {
       setCurrentData(sandwitchData);
     } else {
-      setCurrentData(sandwitchData.filter(item => item.category === category));
+      setCurrentData(
+        sandwitchData.filter((item) => item.category === category)
+      );
     }
   };
 
   const filterItems = (category) => {
-    setSelectedFilter(category)
+    setSelectedFilter(category);
 
-    switch(category) {
+    switch (category) {
       case "Reset Filter":
         setCurrentData(sandwitchData);
         break;
@@ -45,10 +49,14 @@ function App() {
         setCurrentData([...sandwitchData].sort((a, b) => b.price - a.price));
         break;
       case "A to Z":
-        setCurrentData([...sandwitchData].sort((a, b) => a.name.localeCompare(b.name)));
+        setCurrentData(
+          [...sandwitchData].sort((a, b) => a.name.localeCompare(b.name))
+        );
         break;
       case "Z to A":
-        setCurrentData([...sandwitchData].sort((a, b) => b.name.localeCompare(a.name)));
+        setCurrentData(
+          [...sandwitchData].sort((a, b) => b.name.localeCompare(a.name))
+        );
         break;
       default:
         setCurrentData(sandwitchData);
@@ -61,29 +69,25 @@ function App() {
     0
   );
 
-
-
-  
-
   return (
     <div className="App">
       <body>
         <div class="left">
-          <h1>PB&J Time</h1>{" "}
-          {/* Sort dropdowns */}
+          <h1>PB&J Time</h1> {/* Sort dropdowns */}
           <div className="sort-dropdowns">
-          <select 
-          value={selectedSort}
-          onChange={(e) => sortItemsByCategory(e.target.value)} 
-          style={{
-            backgroundColor:
-              selectedSort === "Reset Sort"
-                ? "#f9ecec"
-                : "#ffbeae",
-          }}>
+            <select
+              value={selectedSort}
+              onChange={(e) => sortItemsByCategory(e.target.value)}
+              style={{
+                backgroundColor:
+                  selectedSort === "Reset Sort" ? "#f9ecec" : "#ffbeae",
+              }}
+            >
               <option value="Reset Sort">Reset Sort</option>
               {categories.map((category, index) => (
-                <option key={index} value={category}>{category}</option>
+                <option key={index} value={category}>
+                  {category}
+                </option>
               ))}
             </select>
             <select
@@ -119,12 +123,19 @@ function App() {
             )}
           </div>
         </div>
-        <div className="right">
-          <h2>Cart</h2>
+        <div class="right">
+          <div className="instructions">
+            <h2>Instructions</h2>
+            <ul>
+            <li>1. Choose a nut butter</li>
+            <li>2. Choose a jam</li>
+            <li>3. Choose up to two toppings</li>
+            </ul> 
+          </div>
           {cart.length === 0 ? (
             // If cart is empty, display a message
             <div className="message">
-            <p>Nothing here just yet!</p>
+              <p>Nothing here just yet!</p>
             </div>
           ) : (
             // If cart is not empty, render cart items and total price
