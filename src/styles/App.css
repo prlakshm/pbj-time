@@ -140,13 +140,17 @@ h1 {
     line-height: 1.6rem;
 }
 
+.clicker img {
+    width: 1.3rem;
+    border-radius: 0;
+}
+
 .total p {
-    text-align: left;
     font-weight: bold;
     width: inherit;
     line-height: 0.9rem;
     font-size: 1.05rem;
-    padding-right: 1.1rem;
+    text-align: right;
 }
 
 .message p {
