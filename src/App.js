@@ -63,12 +63,21 @@ function App() {
     }
   };
 
-  // Remove items from cart
-  const removeFromCart = (index) => {
-    const updatedCart = [...cart];
-    updatedCart.splice(index, 1);
-    setCart(updatedCart);
-  };
+// Remove items from cart
+const removeFromCart = (index) => {
+  const updatedCart = [...cart];
+  const itemToRemove = updatedCart[index];
+
+  // Decrement quantity
+  itemToRemove.quantity--;
+
+  // If quantity becomes zero, remove the item from the cart
+  if (itemToRemove.quantity === 0) {
+      updatedCart.splice(index, 1);
+  }
+  // Update the cart state
+  setCart(updatedCart);
+};
 
   // Calculate total price
   const totalPrice = cart.reduce(
@@ -123,6 +132,7 @@ function App() {
                   name={item.name}
                   price={item.price}
                   image={item.image}
+                  category={item.category}
                   cart={cart}
                   setCart={setCart}
                 /> // replace with sandwitchItem component
