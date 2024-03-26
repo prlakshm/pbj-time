@@ -24,7 +24,7 @@ body {
 
 /* Left styling */
 .left {
-    padding: 0.45rem 4rem;
+    padding: 0.45rem 4rem 0.45rem 2rem;
     justify-content: center;
     align-items: center;
     width: fit-content;
@@ -94,10 +94,21 @@ h1 {
 
 /* Right Styling */
 .right {
-    padding: 4rem 0;
+    padding: 1.9rem 0rem;
     display: flex;
     flex-direction: column;
     width: fit-content;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+    border-radius: 1rem;
+    background-color: #f9ecec;
+    border: 4px solid  #ffbeae;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0rem;
 }
 
 .cart-item, .total {
@@ -108,13 +119,17 @@ h1 {
 
 .cart-item p {
     text-align: left;
-    height: fit-content;
+    width: inherit;
     line-height: 0.8rem;
+    font-size: 1.05rem;
 }
 
 .total p {
     text-align: left;
     font-weight: bold;
+    width: inherit;
+    line-height: 1.05rem;
+    font-size: 1.05rem;
 }
 
 .message p {
@@ -135,7 +150,8 @@ h1 {
 .instructions ul {
     list-style-type: none;
     margin-left: -1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .instructions li {

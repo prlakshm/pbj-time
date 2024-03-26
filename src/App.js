@@ -127,33 +127,41 @@ function App() {
           <div className="instructions">
             <h2>Instructions</h2>
             <ul>
-            <li><span className="numering">1</span>. Choose a nut butter</li>
-            <li><span className="numering">2</span>. Choose a jam</li>
-            <li><span className="numering">3</span>. Choose up to two toppings</li>
-            </ul> 
+              <li>
+                <span className="numering">1</span>. Choose a nut butter
+              </li>
+              <li>
+                <span className="numering">2</span>. Choose a jam
+              </li>
+              <li>
+                <span className="numering">3</span>. Choose up to two toppings
+              </li>
+            </ul>
           </div>
-          {cart.length === 0 ? (
-            // If cart is empty, display a message
-            <div className="message">
-              <p>Nothing here just yet!</p>
-            </div>
-          ) : (
-            // If cart is not empty, render cart items and total price
-            <>
-              {cart.map((item, index) => (
-                <div key={index} className="cart-item">
-                  <p>
-                    {item.name} &times; {item.quantity}
-                  </p>
-                  <p>${parseFloat(item.price).toFixed(2)}</p>
-                </div>
-              ))}
-              <div className="total">
-                <p>Total:</p>
-                <p>${parseFloat(totalPrice).toFixed(2)}</p>
+          <div class="cart">
+            {cart.length === 0 ? (
+              // If cart is empty, display a message
+              <div className="message">
+                <p>Nothing here just yet!</p>
               </div>
-            </>
-          )}
+            ) : (
+              // If cart is not empty, render cart items and total price
+              <>
+                {cart.map((item, index) => (
+                  <div key={index} className="cart-item">
+                    <p>
+                      {item.name} &times; {item.quantity}
+                    </p>
+                    <p>${parseFloat(item.price).toFixed(2)}</p>
+                  </div>
+                ))}
+                <div className="total">
+                  <p>Total ({cart.length}):</p>
+                  <p>${parseFloat(totalPrice).toFixed(2)}</p>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </body>
     </div>
