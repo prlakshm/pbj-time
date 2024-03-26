@@ -176,7 +176,7 @@ const removeFromCart = (index) => {
                   </div>
                 ))}
                 <div className="total">
-                  <p>Total ({cart.length}):</p>
+                  <p>Total ({cart.reduce((total, item) => total + item.quantity, 0)}):</p>
                   <p>${parseFloat(totalPrice).toFixed(2)}</p>
                 </div>
               </>
