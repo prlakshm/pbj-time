@@ -124,17 +124,30 @@ h1 {
     font-size: 1.05rem;
 }
 
+.price {
+    display: flex;
+    flex-direction: row;
+}
+
+.clicker {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 100;
+    height: fit-content;
+    line-height: 1.6rem;
+}
+
 .total p {
     text-align: left;
     font-weight: bold;
     width: inherit;
     line-height: 1.05rem;
     font-size: 1.05rem;
+    padding-right: 1.1rem;
 }
 
 .message p {
     text-align: left;
-    color:rgb(90, 90, 90);
 }
 
 .instructions h2 {

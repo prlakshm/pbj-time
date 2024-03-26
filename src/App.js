@@ -63,6 +63,13 @@ function App() {
     }
   };
 
+  // Remove items from cart
+  const removeFromCart = (index) => {
+    const updatedCart = [...cart];
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+  };
+
   // Calculate total price
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -152,7 +159,10 @@ function App() {
                     <p>
                       {item.name} &times; {item.quantity}
                     </p>
-                    <p>${parseFloat(item.price).toFixed(2)}</p>
+                    <div class="price"><p>${parseFloat(item.price).toFixed(2)} {" "} </p><span class="clicker" onClick={() => removeFromCart(index)}>
+                    &times;
+                      </span>
+                      </div>
                   </div>
                 ))}
                 <div className="total">
