@@ -26,7 +26,7 @@ export default function SandwitchItem(props) {
         alert("You can only add up to two toppings!");
         return;
       } else if (existingToppingsCount === 1) {
-        if (cart[existingItemIndex].name == name) {
+        if (cart[existingItemIndex].name === name) {
           // If the same topping exists, update its quantity
           const updatedCart = [...cart];
           updatedCart[existingItemIndex].quantity += 1;

@@ -167,7 +167,7 @@ const removeFromCart = (index) => {
                 {cart.map((item, index) => (
                   <div key={index} className="cart-item">
                     <p>
-                      {item.name} &times; {item.quantity}
+                      {item.name}  {item.category === "Toppings" && `× ${item.quantity}`}
                     </p>
                     <div class="price"><p>${parseFloat(item.price).toFixed(2)} {" "} </p><span class="clicker" onClick={() => removeFromCart(index)}>
                     &times;
