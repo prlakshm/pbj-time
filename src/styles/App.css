@@ -202,11 +202,23 @@ h1 {
 
 .added-photo {
     position: absolute;
-    top: 50%; /* Adjust as needed */
-    left: 50%; /* Adjust as needed */
-    transform: translate(-50%, -50%);
     z-index: 1; /* Ensure it's on top of the base image */
+    transition: opacity 0.5s, transform 0.5s;
+    animation: fallInAnimation 0.5s ease-out;
   }
+
+
+
+@keyframes fallInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media only screen and (max-width: 860px) {
     .bakery-items {

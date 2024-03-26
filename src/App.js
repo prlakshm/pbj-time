@@ -199,7 +199,7 @@ function App() {
             <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
             {cart.map((item, index) => (
               <img
-                key={index}
+                key={item.name}
                 src={item.photo}
                 alt={`Added Item ${index}`}
                 className="added-photo"
