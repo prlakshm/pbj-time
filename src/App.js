@@ -15,20 +15,56 @@ function App() {
   // Use useState to create a state variable to hold the state of the cart
   const [cart, setCart] = useState([]);
 
+  const [currentData, setCurrentData] = useState(sandwitchData); 
+  const [selectedCategory, setSelectedCategory] = useState("Reset Sort");
+
+  const categories = Array.from(new Set(sandwitchData.map(item => item.category))); // Extract unique categories
+
+  const sortItemsByCategory = (category) => {
+    setSelectedCategory(category)
+
+    if (category === "Reset Sort") {
+      setCurrentData(sandwitchData);
+    } else {
+      setCurrentData(sandwitchData.filter(item => item.category === category));
+    }
+  };
+
   // Calculate total price
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
 
+
+
+  
+
   return (
     <div className="App">
       <body>
         <div class="left">
           <h1>PB&J Time</h1>{" "}
+          {/* Sort dropdowns */}
+          <div className="sort-dropdowns">
+          <select 
+          value={selectedCategory}
+          onChange={(e) => sortItemsByCategory(e.target.value)} 
+          style={{
+            backgroundColor:
+              selectedCategory === "Reset Sort"
+                ? "#f9ecec"
+                : "#ffbeae",
+          }}>
+              <option value="Reset Sort">Reset Sort</option>
+              {categories.map((category, index) => (
+                <option key={index} value={category}>{category}</option>
+              ))}
+            </select>
+          </div>
           {/* TODO: personalize your sandwitch (if you want) */}
           <div class="sandwitch-items">
-            {sandwitchData.map(
+            {currentData.map(
               (
                 item,
                 index // TODO: map sandwitchData to sandwitchItem components
