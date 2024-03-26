@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Gluten:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 
+@font-face {
+    font-family: "pencilPete";
+    src: url("../fonts/pencilPete.ttf");
+}
+
+@font-face {
+    font-family: "KGThousandReasons";
+    src: url("../fonts/KGTenThousandReasons.ttf");
+}
+
 
 body {
     background-color: #fedede;
@@ -113,7 +123,7 @@ h1 {
 }
 
 .instructions h2 {
-    font-family: "Love Ya Like A Sister";
+    font-family: "pencilPete";
     color:#fc8364;
     font-size: 2rem;
     letter-spacing: 3px;
@@ -129,10 +139,15 @@ h1 {
 }
 
 .instructions li {
-    font-family: "Love Ya Like A Sister";
+    font-family: "pencilPete";
     color:#fc8364;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
+}
+
+.numering {
+    font-family: "KGThousandReasons";
+    font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 860px) {

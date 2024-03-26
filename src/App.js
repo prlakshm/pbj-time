@@ -127,9 +127,9 @@ function App() {
           <div className="instructions">
             <h2>Instructions</h2>
             <ul>
-            <li>1. Choose a nut butter</li>
-            <li>2. Choose a jam</li>
-            <li>3. Choose up to two toppings</li>
+            <li><span className="numering">1</span>. Choose a nut butter</li>
+            <li><span className="numering">2</span>. Choose a jam</li>
+            <li><span className="numering">3</span>. Choose up to two toppings</li>
             </ul> 
           </div>
           {cart.length === 0 ? (
@@ -145,12 +145,12 @@ function App() {
                   <p>
                     {item.name} &times; {item.quantity}
                   </p>
-                  <p>${item.price}</p>
+                  <p>${parseFloat(item.price).toFixed(2)}</p>
                 </div>
               ))}
               <div className="total">
                 <p>Total:</p>
-                <p>${totalPrice.toFixed(2)}</p>
+                <p>${parseFloat(totalPrice).toFixed(2)}</p>
               </div>
             </>
           )}
