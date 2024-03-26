@@ -3,96 +3,112 @@
     "name": "Walnut Butter",
     "price": 2.00,
     "image": "ps_photos/walnut_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Cashew Butter",
     "price": 1.50,
     "image": "ps_photos/cashew_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Almond Butter",
     "price": 1.00,
     "image": "ps_photos/almond_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Peanut Butter",
     "price": 1.00,
     "image": "ps_photos/peanut_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Pistachio Butter",
     "price": 2.00,
     "image": "ps_photos/pistachio_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Hazelnut Butter",
     "price": 1.50,
     "image": "ps_photos/hazelnut_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Sunflower Butter",
     "price": 1.50,
     "image": "ps_photos/sunflower_butter.png",
-    "category": "Nut Butters"
+    "category": "Nut Butters", 
+    "photo": "ps_photos/peanut_butter_bread.png"
   },
   {
     "name": "Strawberry Jam",
     "price": 0.75,
     "image": "ps_photos/strawberry_jam.png",
-    "category": "Jams"
+    "category": "Jams", 
+    "photo": "ps_photos/strawberry_jam_bread.png"
   },
   {
     "name": "Raspberry Jam",
     "price": 1.00,
     "image": "ps_photos/raspberry_jam.png",
-    "category": "Jams"
+    "category": "Jams", 
+    "photo": "ps_photos/strawberry_jam_bread.png"
   },
   {
     "name": "Blueberry Jam",
     "price": 1.00,
     "image": "ps_photos/blueberry_jam.png",
-    "category": "Jams"
+    "category": "Jams", 
+    "photo": "ps_photos/grape_jam_bread.png"
   },
   {
     "name": "Blackberry Jam",
     "price": 1.00,
     "image": "ps_photos/blackberry_jam.png",
-    "category": "Jams"
+    "category": "Jams", 
+    "photo": "ps_photos/grape_jam_bread.png"
   },
   {
     "name": "Grape Jam",
     "price": 0.75,
     "image": "ps_photos/grape_jam.png",
-    "category": "Jams"
+    "category": "Jams", 
+    "photo": "ps_photos/grape_jam_bread.png"
   },
   {
     "name": "Honey",
     "price": 1.00,
     "image": "ps_photos/honey.png",
-    "category": "Toppings"
+    "category": "Toppings", 
+    "photo": "ps_photos/honey_bread.png"
   },
   {
     "name": "Maple Syrup",
     "price": 1.00,
     "image": "ps_photos/maple_syrup.png",
-    "category": "Toppings"
+    "category": "Toppings", 
+    "photo": "ps_photos/honey_bread.png"
   },
   {
     "name": "Chia Seeds",
     "price": 1.25,
     "image": "ps_photos/chia_seeds.png",
-    "category": "Toppings"
+    "category": "Toppings", 
+    "photo": "ps_photos/chia_bread.png"
   },
   {
     "name": "Flax Seeds",
     "price": 1.25,
     "image": "ps_photos/flax_seeds.png",
-    "category": "Toppings"
+    "category": "Toppings", 
+    "photo": "ps_photos/chia_bread.png"
   }
 ]

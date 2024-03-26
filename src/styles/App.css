@@ -200,6 +200,14 @@ h1 {
     width: 19.5vw;
 }
 
+.added-photo {
+    position: absolute;
+    top: 50%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it's on top of the base image */
+  }
+
 @media only screen and (max-width: 860px) {
     .bakery-items {
         grid-template-columns: 1fr;

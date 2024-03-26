@@ -63,21 +63,21 @@ function App() {
     }
   };
 
-// Remove items from cart
-const removeFromCart = (index) => {
-  const updatedCart = [...cart];
-  const itemToRemove = updatedCart[index];
+  // Remove items from cart
+  const removeFromCart = (index) => {
+    const updatedCart = [...cart];
+    const itemToRemove = updatedCart[index];
 
-  // Decrement quantity
-  itemToRemove.quantity--;
+    // Decrement quantity
+    itemToRemove.quantity--;
 
-  // If quantity becomes zero, remove the item from the cart
-  if (itemToRemove.quantity === 0) {
+    // If quantity becomes zero, remove the item from the cart
+    if (itemToRemove.quantity === 0) {
       updatedCart.splice(index, 1);
-  }
-  // Update the cart state
-  setCart(updatedCart);
-};
+    }
+    // Update the cart state
+    setCart(updatedCart);
+  };
 
   // Calculate total price
   const totalPrice = cart.reduce(
@@ -134,6 +134,7 @@ const removeFromCart = (index) => {
                   price={item.price}
                   image={item.image}
                   category={item.category}
+                  photo={item.photo}
                   cart={cart}
                   setCart={setCart}
                 /> // replace with sandwitchItem component
@@ -157,36 +158,53 @@ const removeFromCart = (index) => {
             </ul>
           </div>
           <div className="cart-container">
-          <div className="cart">
-            {cart.length === 0 ? (
-              // If cart is empty, display a message
-              <div className="message">
-                <p>Nothing here just yet!</p>
-              </div>
-            ) : (
-              // If cart is not empty, render cart items and total price
-              <>
-                {cart.map((item, index) => (
-                  <div key={index} className="cart-item">
-                    <p>
-                      {item.name}  {item.category === "Toppings" && `× ${item.quantity}`}
-                    </p>
-                    <div className="price"><p>${parseFloat(item.price).toFixed(2)} {" "} </p><span className="clicker" onClick={() => removeFromCart(index)}>
-                    &times;
-                      </span>
-                      </div>
-                  </div>
-                ))}
-                <div className="total">
-                  <p>Total ({cart.reduce((total, item) => total + item.quantity, 0)}):</p>
-                  <p>${parseFloat(totalPrice).toFixed(2)}</p>
+            <div className="cart">
+              {cart.length === 0 ? (
+                // If cart is empty, display a message
+                <div className="message">
+                  <p>Nothing here just yet!</p>
                 </div>
-              </>
-            )}
-          </div>
+              ) : (
+                // If cart is not empty, render cart items and total price
+                <>
+                  {cart.map((item, index) => (
+                    <div key={index} className="cart-item">
+                      <p>
+                        {item.name}{" "}
+                        {item.category === "Toppings" && `× ${item.quantity}`}
+                      </p>
+                      <div className="price">
+                        <p>${parseFloat(item.price).toFixed(2)} </p>
+                        <span
+                          className="clicker"
+                          onClick={() => removeFromCart(index)}
+                        >
+                          &times;
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="total">
+                    <p>
+                      Total (
+                      {cart.reduce((total, item) => total + item.quantity, 0)}):
+                    </p>
+                    <p>${parseFloat(totalPrice).toFixed(2)}</p>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
           <div className="build">
-          <img src={"ps_photos/bread.png"} alt="Sandwitch Base" />
+            <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
+            {cart.map((item, index) => (
+              <img
+                key={index}
+                src={item.photo}
+                alt={`Added Item ${index}`}
+                className="added-photo"
+              />
+            ))}
           </div>
         </div>
       </body>
