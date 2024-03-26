@@ -16,17 +16,42 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const [currentData, setCurrentData] = useState(sandwitchData); 
-  const [selectedCategory, setSelectedCategory] = useState("Reset Sort");
+  const [selectedSort, setSelectedSort] = useState("Reset Sort");
+  const [selectedFilter, setSelectedFilter] = useState("Reset Filter");
 
   const categories = Array.from(new Set(sandwitchData.map(item => item.category))); // Extract unique categories
 
   const sortItemsByCategory = (category) => {
-    setSelectedCategory(category)
+    setSelectedSort(category)
 
     if (category === "Reset Sort") {
       setCurrentData(sandwitchData);
     } else {
       setCurrentData(sandwitchData.filter(item => item.category === category));
+    }
+  };
+
+  const filterItems = (category) => {
+    setSelectedFilter(category)
+
+    switch(category) {
+      case "Reset Filter":
+        setCurrentData(sandwitchData);
+        break;
+      case "Low to High":
+        setCurrentData([...sandwitchData].sort((a, b) => a.price - b.price));
+        break;
+      case "High to Low":
+        setCurrentData([...sandwitchData].sort((a, b) => b.price - a.price));
+        break;
+      case "A to Z":
+        setCurrentData([...sandwitchData].sort((a, b) => a.name.localeCompare(b.name)));
+        break;
+      case "Z to A":
+        setCurrentData([...sandwitchData].sort((a, b) => b.name.localeCompare(a.name)));
+        break;
+      default:
+        setCurrentData(sandwitchData);
     }
   };
 
@@ -48,11 +73,11 @@ function App() {
           {/* Sort dropdowns */}
           <div className="sort-dropdowns">
           <select 
-          value={selectedCategory}
+          value={selectedSort}
           onChange={(e) => sortItemsByCategory(e.target.value)} 
           style={{
             backgroundColor:
-              selectedCategory === "Reset Sort"
+              selectedSort === "Reset Sort"
                 ? "#f9ecec"
                 : "#ffbeae",
           }}>
@@ -60,6 +85,20 @@ function App() {
               {categories.map((category, index) => (
                 <option key={index} value={category}>{category}</option>
               ))}
+            </select>
+            <select
+              value={selectedFilter}
+              onChange={(e) => filterItems(e.target.value)}
+              style={{
+                backgroundColor:
+                  selectedFilter === "Reset Filter" ? "#f9ecec" : "#ffbeae",
+              }}
+            >
+              <option value="Reset Filter">Reset Filter</option>
+              <option value="Low to High">Low to High</option>
+              <option value="High to Low">High to Low</option>
+              <option value="A to Z">A to Z</option>
+              <option value="Z to A">Z to A</option>
             </select>
           </div>
           {/* TODO: personalize your sandwitch (if you want) */}
