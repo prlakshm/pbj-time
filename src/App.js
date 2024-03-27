@@ -109,8 +109,9 @@ function App() {
     0
   );
 
-  const clearCart = useCallback(() => {
-    setCart([]);
+  // Reload page when click title
+  const reloadPage = useCallback(() => {
+    window.location.reload()
   }, []);
 
   return (
@@ -118,7 +119,7 @@ function App() {
       <body>
         {/* Sandwitch items */}
         <div className="left">
-          <h1 onClick={clearCart}>PB&J Time</h1> {/* Sort dropdowns */}
+          <h1 onClick={reloadPage}>PB&J Time</h1> {/* Sort dropdowns */}
           <div className="sort-dropdowns">
             <select
               value={selectedSort}
