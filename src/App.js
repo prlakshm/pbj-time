@@ -10,7 +10,6 @@ sandwitchData.forEach((item) => {
 /* ############################################################## */
 
 function App() {
-  // TODO: use useState to create a state variable to hold the state of the cart
 
   // Use useState to create a state variable to hold the state of the cart
   const [cart, setCart] = useState([]);
@@ -113,6 +112,7 @@ function App() {
   return (
     <div className="App">
       <body>
+        {/* Sandwitch items */}
         <div className="left">
           <h1>PB&J Time</h1> {/* Sort dropdowns */}
           <div className="sort-dropdowns">
@@ -162,11 +162,12 @@ function App() {
                   photo={item.photo}
                   cart={cart}
                   setCart={setCart}
-                /> // replace with sandwitchItem component
+                /> // sandwitchItem component
               )
             )}
           </div>
         </div>
+        {/* Display menu */}
         <div className="right">
           <div className="top">
             <div className="instructions">

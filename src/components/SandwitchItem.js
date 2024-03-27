@@ -1,4 +1,3 @@
-// TODO: create a component that displays a single sandwitch item
 import "../styles/SandwitchItem.css";
 
 export default function SandwitchItem(props) {
@@ -79,6 +78,7 @@ export default function SandwitchItem(props) {
 
   return (
     <div class="item">
+        {/* Sandwitch Item Card */}
       <div class="img-wrapper">
         <img src={image} alt={name + "Image"} />
       </div>
