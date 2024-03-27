@@ -18,24 +18,46 @@ function App() {
   const [currentData, setCurrentData] = useState(sandwitchData);
   const [selectedSort, setSelectedSort] = useState("Reset Sort");
   const [selectedFilter, setSelectedFilter] = useState("Reset Filter");
-  const [sortedData, setSortedData] = useState(sandwitchData)
+  const [sortedData, setSortedData] = useState(sandwitchData);
 
   const categories = Array.from(
     new Set(sandwitchData.map((item) => item.category))
   ); // Extract unique categories
 
   const sortItemsByCategory = (category) => {
+    // Set selected sort
     setSelectedSort(category);
-
+  
+    // Apply sorting
+    let sorted;
     if (category === "Reset Sort") {
-      setCurrentData(sandwitchData);
+      sorted = [...sandwitchData];
     } else {
-      setCurrentData(
-        sandwitchData.filter((item) => item.category === category)
-      );
+      sorted = sandwitchData.filter((item) => item.category === category);
     }
 
-    setSortedData(currentData);
+    setSortedData(sorted)
+  
+    // Apply existing filter along with sort
+    switch (selectedFilter) {
+      case "Reset Filter":
+        setCurrentData(sorted);
+        break;
+      case "Low to High":
+        setCurrentData([...sorted].sort((a, b) => a.price - b.price));
+        break;
+      case "High to Low":
+        setCurrentData([...sorted].sort((a, b) => b.price - a.price));
+        break;
+      case "A to Z":
+        setCurrentData([...sorted].sort((a, b) => a.name.localeCompare(b.name)));
+        break;
+      case "Z to A":
+        setCurrentData([...sorted].sort((a, b) => b.name.localeCompare(a.name)));
+        break;
+      default:
+        setCurrentData(sorted);
+    }
   };
 
   const filterItems = (category) => {
@@ -64,10 +86,8 @@ function App() {
       default:
         setCurrentData(sandwitchData);
     }
-
   };
 
-  
   // Remove items from cart
   const removeFromCart = (index) => {
     const updatedCart = [...cart];
@@ -89,7 +109,6 @@ function App() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
-
 
   return (
     <div className="App">
@@ -150,78 +169,80 @@ function App() {
         </div>
         <div className="right">
           <div className="top">
-          <div className="instructions">
-            <h2>Instructions</h2>
-            <ul>
-              <li>
-                <span className="numering">1</span>. Choose a nut butter
-              </li>
-              <li>
-                <span className="numering">2</span>. Choose a jam
-              </li>
-              <li>
-                <span className="numering">3</span>. Choose up to two toppings
-              </li>
-            </ul>
-          </div>
-          <div className="cart-container">
-            <div className="cart">
-              {cart.length === 0 ? (
-                // If cart is empty, display a message
-                <div className="message">
-                  <p>Nothing here just yet!</p>
-                </div>
-              ) : (
-                // If cart is not empty, render cart items and total price
-                <>
-                  {cart.map((item, index) => (
-                    <div key={index} className="cart-item">
-                      <p>
-                        {item.name}{" "}
-                        {item.category === "Toppings" && `× ${item.quantity}`}
-                      </p>
-                      <div className="price">
-                        <p>${parseFloat(item.price).toFixed(2)} </p>
-                        <span
-                          className="clicker"
-                          onClick={() => removeFromCart(index)}
-                        >
-                          &times;
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="total">
-                    <p>
-                      Total (
-                      {cart.reduce((total, item) => total + item.quantity, 0)}):
-                    </p>
-                    <p className="trash">${parseFloat(totalPrice).toFixed(2)}
-                    {" "}
-                    <button
-                          onClick={() => setCart([])}
-                        ><img src="icons/trash.png" alt="Trash Can Icon"/></button></p>
+            <div className="instructions">
+              <h2>Instructions</h2>
+              <ul>
+                <li>
+                  <span className="numering">1</span>. Choose a nut butter
+                </li>
+                <li>
+                  <span className="numering">2</span>. Choose a jam
+                </li>
+                <li>
+                  <span className="numering">3</span>. Choose up to two toppings
+                </li>
+              </ul>
+            </div>
+            <div className="cart-container">
+              <div className="cart">
+                {cart.length === 0 ? (
+                  // If cart is empty, display a message
+                  <div className="message">
+                    <p>Nothing here just yet!</p>
                   </div>
-                </>
-              )}
+                ) : (
+                  // If cart is not empty, render cart items and total price
+                  <>
+                    {cart.map((item, index) => (
+                      <div key={index} className="cart-item">
+                        <p>
+                          {item.name}{" "}
+                          {item.category === "Toppings" && `× ${item.quantity}`}
+                        </p>
+                        <div className="price">
+                          <p>${parseFloat(item.price).toFixed(2)} </p>
+                          <span
+                            className="clicker"
+                            onClick={() => removeFromCart(index)}
+                          >
+                            &times;
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="total">
+                      <p>
+                        Total (
+                        {cart.reduce((total, item) => total + item.quantity, 0)}
+                        ):
+                      </p>
+                      <p className="trash">
+                        ${parseFloat(totalPrice).toFixed(2)}{" "}
+                        <button onClick={() => setCart([])}>
+                          <img src="icons/trash.png" alt="Trash Can Icon" />
+                        </button>
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-          </div>
           <div className="bottom">
-          <div className="build">
-            <div className="img-container">
-            <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
-            {cart.map((item, index) => (
-              <img
-                key={item.name}
-                src={item.photo}
-                alt={`Added Item ${index}`}
-                className="added-photo"
-              />
-            ))}
+            <div className="build">
+              <div className="img-container">
+                <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
+                {cart.map((item, index) => (
+                  <img
+                    key={item.name}
+                    src={item.photo}
+                    alt={`Added Item ${index}`}
+                    className="added-photo"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-          </div>
-        </div>
         </div>
       </body>
     </div>
