@@ -120,6 +120,7 @@ function App() {
         {/* Sandwitch items */}
         <div className="left">
           <h1 onClick={reloadPage}>PB&J Time</h1> {/* Sort dropdowns */}
+          <div className="menu">
           <div className="sort-dropdowns">
             <select
               value={selectedSort}
@@ -170,6 +171,7 @@ function App() {
                 /> // sandwitchItem component
               )
             )}
+          </div>
           </div>
         </div>
         {/* Display menu */}
