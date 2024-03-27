@@ -259,9 +259,6 @@ h1 {
     body {
         flex-direction: column;
     }
-    .menu {
-        padding-left: 2rem;
-    }
     .right {
         flex-direction: row;
         justify-content: center;
@@ -288,6 +285,7 @@ h1 {
     
     .menu {
         width: fit-content;
+        padding-left: 2rem;
     }
     
     .sandwitch-items {
