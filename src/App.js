@@ -143,6 +143,7 @@ function App() {
           </div>
         </div>
         <div className="right">
+          <div className="top">
           <div className="instructions">
             <h2>Instructions</h2>
             <ul>
@@ -199,6 +200,8 @@ function App() {
               )}
             </div>
           </div>
+          </div>
+          <div className="bottom">
           <div className="build">
             <div className="img-container">
             <img src={"ps_photos/bread.png"} alt="Sandwich Base" />
@@ -212,6 +215,7 @@ function App() {
             ))}
           </div>
           </div>
+        </div>
         </div>
       </body>
     </div>
