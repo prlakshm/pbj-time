@@ -43,6 +43,7 @@ img {
     color:white;
     box-sizing: border-box;
     font-size: 1rem;
+    cursor: pointer;
   }
 
   button:hover, button:active {

@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import sandwitchData from "./assets/sandwitch-data.json";
 import SandwitchItem from "./components/SandwitchItem";
 
@@ -109,12 +109,16 @@ function App() {
     0
   );
 
+  const clearCart = useCallback(() => {
+    setCart([]);
+  }, []);
+
   return (
     <div className="App">
       <body>
         {/* Sandwitch items */}
         <div className="left">
-          <h1>PB&J Time</h1> {/* Sort dropdowns */}
+          <h1 onClick={clearCart}>PB&J Time</h1> {/* Sort dropdowns */}
           <div className="sort-dropdowns">
             <select
               value={selectedSort}

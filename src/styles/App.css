@@ -38,6 +38,7 @@ h1 {
     padding-left: 0.75rem;
     margin: 1rem;
     text-shadow: 3px 4px 6px rgb(255, 255, 255), 0 0 0 #000;
+    cursor: pointer;
 }
 
 .sandwitch-items {
@@ -85,6 +86,7 @@ h1 {
     border: 4px solid  #ffbeae;
     font-size: 1.15rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .sort-dropdowns option {
