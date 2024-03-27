@@ -18,6 +18,7 @@ function App() {
   const [currentData, setCurrentData] = useState(sandwitchData);
   const [selectedSort, setSelectedSort] = useState("Reset Sort");
   const [selectedFilter, setSelectedFilter] = useState("Reset Filter");
+  const [sortedData, setSortedData] = useState(sandwitchData)
 
   const categories = Array.from(
     new Set(sandwitchData.map((item) => item.category))
@@ -33,6 +34,8 @@ function App() {
         sandwitchData.filter((item) => item.category === category)
       );
     }
+
+    setSortedData(currentData);
   };
 
   const filterItems = (category) => {
@@ -40,29 +43,31 @@ function App() {
 
     switch (category) {
       case "Reset Filter":
-        setCurrentData(sandwitchData);
+        setCurrentData(sortedData);
         break;
       case "Low to High":
-        setCurrentData([...sandwitchData].sort((a, b) => a.price - b.price));
+        setCurrentData([...currentData].sort((a, b) => a.price - b.price));
         break;
       case "High to Low":
-        setCurrentData([...sandwitchData].sort((a, b) => b.price - a.price));
+        setCurrentData([...currentData].sort((a, b) => b.price - a.price));
         break;
       case "A to Z":
         setCurrentData(
-          [...sandwitchData].sort((a, b) => a.name.localeCompare(b.name))
+          [...currentData].sort((a, b) => a.name.localeCompare(b.name))
         );
         break;
       case "Z to A":
         setCurrentData(
-          [...sandwitchData].sort((a, b) => b.name.localeCompare(a.name))
+          [...currentData].sort((a, b) => b.name.localeCompare(a.name))
         );
         break;
       default:
         setCurrentData(sandwitchData);
     }
+
   };
 
+  
   // Remove items from cart
   const removeFromCart = (index) => {
     const updatedCart = [...cart];
@@ -84,6 +89,7 @@ function App() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
 
   return (
     <div className="App">
