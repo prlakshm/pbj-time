@@ -277,7 +277,7 @@ h1 {
 
 @media only screen and (max-width: 500px) {
     .left {
-        width: 65rem;
+        width: 40rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -285,12 +285,14 @@ h1 {
     
     .menu {
         width: fit-content;
+        padding-left: 2rem;
     }
     
     .sandwitch-items {
         grid-template-columns: 1fr 1fr;
     }
     .right {
+        width: 40rem;
         flex-direction: column;
     }
     .right .bottom {

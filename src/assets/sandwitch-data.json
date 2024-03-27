@@ -2,7 +2,7 @@
   {
     "name": "Walnut Butter",
     "price": 2.00,
-    "image": "ps_photos/walnut_butter.png",
+    "image": "ps_photos/Walnut_butter.png",
     "category": "Nut Butters", 
     "photo": "ps_photos/peanut_butter_bread.png"
   },
@@ -44,7 +44,7 @@
   {
     "name": "Sunflower Butter",
     "price": 1.50,
-    "image": "ps_photos/sunflower_butter.png",
+    "image": "ps_photos/Sunflower_butter.png",
     "category": "Nut Butters", 
     "photo": "ps_photos/peanut_butter_bread.png"
   },
