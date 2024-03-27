@@ -232,7 +232,7 @@ h1 {
 
 .added-photo {
     position: absolute;
-    left: 9%; /* Adjust as needed */
+    left: 11%; /* Adjust as needed */
     z-index: 1; /* Ensure it's on top of the base image */
     transition: opacity 0.5s, transform 0.5s;
     animation: fallInAnimation 0.5s ease-out;
